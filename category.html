@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Decor — Aesthetic Bee</title>
+  <meta name="description" content="Browse curated Home Decor picks on Aesthetic Bee. Ceramics, lighting, textiles and more — hand-picked for the design-conscious." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     SEARCH OVERLAY
+══════════════════════════════════════════════ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="search-box">
+    <i data-lucide="search" style="width:20px;height:20px;color:var(--charcoal-30);flex-shrink:0"></i>
+    <input type="text" id="searchInput" placeholder="Search products, categories…" />
+    <button id="searchClose" class="icon-btn" aria-label="Close search">
+      <i data-lucide="x" style="width:18px;height:18px"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     MOBILE NAV
+══════════════════════════════════════════════ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav-drawer">
+    <button class="icon-btn mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i data-lucide="x" style="width:22px;height:22px"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="category.html" class="active" style="color:var(--accent)">Home Decor</a>
+    <a href="category.html">Fashion</a>
+    <a href="category.html">Electronics</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="back-btn" id="backBtn" aria-label="Go back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </a>
+      <a href="index.html" class="logo" aria-label="Aesthetic Bee home">
+        <i data-lucide="aperture" style="width:22px;height:22px;color:var(--accent)"></i>
+        Aesthetic<span>Bee</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="category.html" class="active" id="nav-home-decor">Home Decor</a>
+        <a href="category.html" id="nav-fashion">Fashion</a>
+        <a href="category.html" id="nav-electronics">Electronics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn js-search-open" aria-label="Open search" id="searchOpenBtn">
+          <i data-lucide="search" style="width:18px;height:18px"></i>
+        </button>
+        <a href="index.html#newsletter" class="btn btn-primary btn-sm header-cta">Newsletter</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ══════════════════════════════════════════════
+     CATEGORY HERO
+══════════════════════════════════════════════ -->
+<section class="category-hero" aria-label="Home Decor category">
+  <div class="container">
+    <p class="eyebrow">Category</p>
+    <h1>Home Decor</h1>
+    <p>Objects that make your space feel intentional — ceramics, textiles, lighting, and more, curated for the detail-oriented home.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CATEGORY PILLS + FILTERS
+══════════════════════════════════════════════ -->
+<section style="padding:2rem 0 0" aria-label="Filter and sort">
+  <div class="container">
+
+    <!-- Pills -->
+    <div class="category-pills" role="tablist" aria-label="Category filter">
+      <button class="pill" role="tab" id="pill-all" aria-selected="false">All</button>
+      <button class="pill active" role="tab" id="pill-home-decor" aria-selected="true">Home Decor</button>
+      <button class="pill" role="tab" id="pill-fashion" aria-selected="false">Fashion</button>
+      <button class="pill" role="tab" id="pill-electronics" aria-selected="false">Electronics</button>
+    </div>
+
+    <!-- Filter / Sort Bar -->
+    <div class="filter-bar" role="search" aria-label="Filter and sort products">
+      <span class="filter-label">Sort</span>
+      <select class="filter-select" id="sort-select" aria-label="Sort by">
+        <option value="popular">Popularity</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="newest">Newest</option>
+      </select>
+
+      <div class="filter-divider" aria-hidden="true"></div>
+      <span class="filter-label">Price</span>
+      <select class="filter-select" id="price-filter" aria-label="Price range">
+        <option value="all">All Prices</option>
+        <option value="0-50">Under $50</option>
+        <option value="50-100">$50 – $100</option>
+        <option value="100-200">$100 – $200</option>
+        <option value="200+">$200+</option>
+      </select>
+
+      <div class="filter-divider" aria-hidden="true"></div>
+      <span class="filter-label">Room</span>
+      <select class="filter-select" id="room-filter" aria-label="Room type">
+        <option value="all">Any Room</option>
+        <option value="living">Living Room</option>
+        <option value="bedroom">Bedroom</option>
+        <option value="kitchen">Kitchen</option>
+        <option value="bathroom">Bathroom</option>
+        <option value="office">Office</option>
+      </select>
+
+      <div class="filter-divider" aria-hidden="true"></div>
+      <span class="filter-label">Material</span>
+      <select class="filter-select" id="material-filter" aria-label="Material type">
+        <option value="all">All Materials</option>
+        <option value="ceramic">Ceramic</option>
+        <option value="wood">Wood</option>
+        <option value="linen">Linen / Textile</option>
+        <option value="glass">Glass</option>
+        <option value="rattan">Rattan / Woven</option>
+      </select>
+
+      <span class="filter-count" aria-live="polite">Showing <strong>12</strong> products</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PRODUCT GRID
+══════════════════════════════════════════════ -->
+<section class="section-pad" aria-label="Product listings">
+  <div class="container">
+    <div class="products-grid" role="list" id="productGrid">
+      <!-- Row 1 -->
+      <article class="product-card reveal" role="listitem" data-price="38" data-order="1" data-category="home-decor">
+        <div class="product-card-img">
+          <img src="images/prod_vase.png" alt="Matte ceramic bud vase on white background" loading="lazy" />
+          <span class="product-card-badge accent">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Ceramics</span>
+          <h4 class="product-card-name">Matte Ceramic Bud Vase</h4>
+          <div class="product-card-price">$38</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card1-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-1" role="listitem" data-price="54" data-order="2" data-category="home-decor">
+        <div class="product-card-img">
+          <img src="images/prod_candle.png" alt="Luxury frosted glass scented candle" loading="lazy" />
+          <span class="product-card-badge accent">Top Rated</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Scent & Ambience</span>
+          <h4 class="product-card-name">Amber Cedar Candle</h4>
+          <div class="product-card-price">$54</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card2-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-2" role="listitem" data-price="65" data-order="3" data-category="fashion">
+        <div class="product-card-img">
+          <img src="images/prod_throw.png" alt="Oversized chunky knit cardigan" loading="lazy" />
+          <span class="product-card-badge accent">Editor's Pick</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Knitwear</span>
+          <h4 class="product-card-name">Oversized Knit Cardigan</h4>
+          <div class="product-card-price">$65</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card3-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-3" role="listitem" data-price="42" data-order="4" data-category="home-decor">
+        <div class="product-card-img">
+          <img src="images/cat_home_decor.png" alt="Rattan tray with home decor objects" loading="lazy" />
+          <span class="product-card-badge">New</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Storage & Display</span>
+          <h4 class="product-card-name">Woven Rattan Tray Set</h4>
+          <div class="product-card-price">$42</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card4-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Row 2 -->
+      <article class="product-card reveal" role="listitem" data-price="89" data-order="5" data-category="electronics">
+        <div class="product-card-img">
+          <img src="images/prod_vase.png" alt="Smart LED table lamp" loading="lazy" />
+          <span class="product-card-badge">New</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Lighting</span>
+          <h4 class="product-card-name">Smart LED Table Lamp</h4>
+          <div class="product-card-price">$89</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card5-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-1" role="listitem" data-price="46" data-order="6" data-category="home-decor">
+        <div class="product-card-img">
+          <img src="images/prod_candle.png" alt="Sea salt and driftwood soy candle" loading="lazy" />
+          <span class="product-card-badge accent">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Scent & Ambience</span>
+          <h4 class="product-card-name">Sea Salt Soy Candle</h4>
+          <div class="product-card-price">$46</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card6-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-2" role="listitem" data-price="48" data-order="7" data-category="fashion">
+        <div class="product-card-img">
+          <img src="images/prod_throw.png" alt="Linen tote bag" loading="lazy" />
+          <span class="product-card-badge accent">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Bags</span>
+          <h4 class="product-card-name">Linen Market Tote</h4>
+          <div class="product-card-price">$48</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card7-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-3" role="listitem" data-price="72" data-order="8" data-category="home-decor">
+        <div class="product-card-img">
+          <img src="images/cat_home_decor.png" alt="Handwoven basket in natural materials" loading="lazy" />
+          <span class="product-card-badge">New</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Storage & Display</span>
+          <h4 class="product-card-name">Handwoven Storage Basket</h4>
+          <div class="product-card-price">$72</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card8-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Row 3 -->
+      <article class="product-card reveal" role="listitem" data-price="35" data-order="9" data-category="fashion">
+        <div class="product-card-img">
+          <img src="images/prod_vase.png" alt="Minimalist crossbody bag" loading="lazy" />
+          <span class="product-card-badge accent">Editor's Pick</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Accessories</span>
+          <h4 class="product-card-name">Minimalist Crossbody Bag</h4>
+          <div class="product-card-price">$35</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card9-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-1" role="listitem" data-price="79" data-order="10" data-category="electronics">
+        <div class="product-card-img">
+          <img src="images/prod_candle.png" alt="Wireless bluetooth speaker" loading="lazy" />
+          <span class="product-card-badge accent">Top Rated</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Audio</span>
+          <h4 class="product-card-name">Wireless Bluetooth Speaker</h4>
+          <div class="product-card-price">$79</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card10-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-2" role="listitem" data-price="299" data-order="11" data-category="electronics">
+        <div class="product-card-img">
+          <img src="images/prod_throw.png" alt="Noise canceling headphones" loading="lazy" />
+          <span class="product-card-badge accent">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Audio</span>
+          <h4 class="product-card-name">Noise-Canceling Headphones</h4>
+          <div class="product-card-price">$299</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card11-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-3" role="listitem" data-price="49" data-order="12" data-category="electronics">
+        <div class="product-card-img">
+          <img src="images/cat_home_decor.png" alt="Smart LED strip lights" loading="lazy" />
+          <span class="product-card-badge">New</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Smart Home</span>
+          <h4 class="product-card-name">Smart LED Strip Lights</h4>
+          <div class="product-card-price">$49</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="cat-card12-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /products-grid -->
+
+    <!-- Load More -->
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" id="loadMoreBtn">
+        Load More
+        <i data-lucide="chevron-down" style="width:16px;height:16px"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     NEWSLETTER
+══════════════════════════════════════════════ -->
+<section class="newsletter-band" aria-label="Newsletter signup">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Weekly Picks</p>
+      <h2>Get the best home finds, weekly.</h2>
+      <p>Curated decor picks delivered every Thursday. No clutter, just the good stuff.</p>
+      <form class="newsletter-form js-newsletter" id="category-newsletter" novalidate>
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit" class="btn btn-primary" id="cat-newsletter-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <i data-lucide="aperture" style="width:20px;height:20px;color:var(--accent)"></i>
+          Aesthetic<span>Bee</span>
+        </a>
+        <p>A curated affiliate site for the design-conscious. We pick fewer things so you don't have to search through more.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Pinterest" id="foot2-pinterest"><i data-lucide="star" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="Instagram" id="foot2-instagram"><i data-lucide="instagram" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="Twitter" id="foot2-twitter"><i data-lucide="twitter" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="YouTube" id="foot2-youtube"><i data-lucide="youtube" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="category.html" id="foot2-home-decor">Home Decor</a></li>
+          <li><a href="category.html" id="foot2-fashion">Fashion</a></li>
+          <li><a href="category.html" id="foot2-electronics">Electronics</a></li>
+          <li><a href="category.html" id="foot2-all">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="#" id="foot2-about">Our Story</a></li>
+          <li><a href="#" id="foot2-editorial">Editorial Process</a></li>
+          <li><a href="#" class="js-contact-open" id="foot2-contact">Contact</a></li>
+          <li><a href="#" id="foot2-disclosure">Affiliate Disclosure</a></li>
+          <li><a href="admin.html" id="foot2-admin" style="opacity:0.6;font-size:0.75rem">🔒 Admin Control</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Weekly Newsletter</h5>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:0.9rem;line-height:1.65">Fresh picks every Thursday.</p>
+        <form class="footer-newsletter-form js-newsletter" id="footer2-newsletter" novalidate>
+          <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+          <button type="submit" class="btn btn-primary btn-sm" id="footer2-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Aesthetic Bee. All rights reserved.</p>
+      <p class="affiliate-disclosure">
+        <i data-lucide="info" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px"></i>
+        This site contains affiliate links — we may earn a commission at no extra cost to you.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Contact Modal ──────────────────────────────── -->
+<div id="contactModal" class="contact-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+  <div class="contact-modal-card">
+    <button class="contact-modal-close" id="contactModalClose" aria-label="Close contact form">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="contact-modal-header">
+      <h2 id="contactModalTitle">Get in Touch</h2>
+      <p>We'd love to hear from you. Send us a message and we'll get back to you shortly.</p>
+    </div>
+    <form class="contact-modal-form" id="contactForm" action="https://formspree.io/f/xpqgbdyy" method="POST" novalidate>
+      <div class="contact-field">
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="name" placeholder="Your Name" required autocomplete="name" />
+      </div>
+      <div class="contact-field">
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="_replyto" placeholder="Your Email" required autocomplete="email" />
+      </div>
+      <div class="contact-field">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

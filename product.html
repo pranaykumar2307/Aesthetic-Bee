@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over-Ear Noise-Canceling Headphones — Aesthetic Bee</title>
+  <meta name="description" content="Premium over-ear noise-canceling headphones — detailed review, key specs, and direct link to the best deal. Curated by Aesthetic Bee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Product detail page extras */
+    .product-detail-wrap { padding: clamp(3rem, 6vw, 5.5rem) 0; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--charcoal-30);
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--charcoal-60); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--charcoal-30); }
+
+    .product-rating {
+      display: flex; align-items: center; gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .stars { display: flex; gap: 2px; }
+    .star-filled { color: var(--accent); }
+    .product-rating-text { font-size: 0.82rem; color: var(--charcoal-60); }
+
+    .product-meta {
+      display: flex; gap: 1.25rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-section);
+      border-radius: var(--radius-md);
+    }
+    .product-meta-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; color: var(--charcoal-60);
+    }
+    .product-meta-item svg { color: var(--accent); }
+
+    .product-detail-cta-note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--charcoal-30);
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+
+    .related-section { background: var(--bg-section); }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     SEARCH OVERLAY
+══════════════════════════════════════════════ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Site search">
+  <div class="search-box">
+    <i data-lucide="search" style="width:20px;height:20px;color:var(--charcoal-30);flex-shrink:0"></i>
+    <input type="text" id="searchInput" placeholder="Search products, categories…" />
+    <button id="searchClose" class="icon-btn" aria-label="Close search">
+      <i data-lucide="x" style="width:18px;height:18px"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     MOBILE NAV
+══════════════════════════════════════════════ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <div class="mobile-nav-drawer">
+    <button class="icon-btn mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i data-lucide="x" style="width:22px;height:22px"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="category.html">Home Decor</a>
+    <a href="category.html">Fashion</a>
+    <a href="category.html" class="active" style="color:var(--accent)">Electronics</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="category.html" class="back-btn" id="backBtn" aria-label="Go back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </a>
+      <a href="index.html" class="logo" aria-label="Aesthetic Bee home">
+        <i data-lucide="aperture" style="width:22px;height:22px;color:var(--accent)"></i>
+        Aesthetic<span>Bee</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="category.html" id="nav-home-decor">Home Decor</a>
+        <a href="category.html" id="nav-fashion">Fashion</a>
+        <a href="category.html" class="active" id="nav-electronics">Electronics</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn js-search-open" aria-label="Open search" id="searchOpenBtn">
+          <i data-lucide="search" style="width:18px;height:18px"></i>
+        </button>
+        <a href="index.html#newsletter" class="btn btn-primary btn-sm header-cta">Newsletter</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ══════════════════════════════════════════════
+     PRODUCT DETAIL
+══════════════════════════════════════════════ -->
+<section class="product-detail-wrap" aria-label="Product detail">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" id="breadcrumb-home">Home</a>
+      <span aria-hidden="true"><i data-lucide="chevron-right" style="width:13px;height:13px"></i></span>
+      <a href="category.html" id="breadcrumb-electronics">Electronics</a>
+      <span aria-hidden="true"><i data-lucide="chevron-right" style="width:13px;height:13px"></i></span>
+      <span aria-current="page">Over-Ear Noise-Canceling Headphones</span>
+    </nav>
+
+    <div class="product-detail-grid">
+
+      <!-- Image -->
+      <div class="product-detail-img-wrap reveal" aria-label="Product image">
+        <img src="images/prod_headphones.png" alt="Premium over-ear noise-canceling headphones in matte sand white" />
+      </div>
+
+      <!-- Info -->
+      <div class="product-detail-info reveal reveal-delay-1">
+        <p class="eyebrow">Electronics · Headphones</p>
+        <h1>Over-Ear Noise-Canceling Headphones</h1>
+
+        <!-- Rating -->
+        <div class="product-rating" aria-label="4.8 out of 5 stars">
+          <div class="stars" aria-hidden="true">
+            <i data-lucide="star" class="star-filled" style="width:15px;height:15px;fill:var(--accent)"></i>
+            <i data-lucide="star" class="star-filled" style="width:15px;height:15px;fill:var(--accent)"></i>
+            <i data-lucide="star" class="star-filled" style="width:15px;height:15px;fill:var(--accent)"></i>
+            <i data-lucide="star" class="star-filled" style="width:15px;height:15px;fill:var(--accent)"></i>
+            <i data-lucide="star" class="star-filled" style="width:15px;height:15px;fill:var(--accent)"></i>
+          </div>
+          <span class="product-rating-text">4.8 · 2,341 reviews</span>
+        </div>
+
+        <div class="product-detail-price" aria-label="Price: $249">$249</div>
+
+        <p class="product-detail-desc">
+          These headphones strike the rare balance between audiophile sound quality and everyday wearability. The adaptive noise cancellation is class-leading — shutting out everything from open-plan offices to long-haul flights — while 38-hour battery life means you'll rarely reach for a cable. The build is premium without being ostentatious: soft matte surfaces, padded memory foam cushions, and a folding frame that slips easily into the included case.
+        </p>
+
+        <!-- Meta pills -->
+        <div class="product-meta" aria-label="Product highlights">
+          <div class="product-meta-item">
+            <i data-lucide="battery-full" style="width:14px;height:14px"></i>
+            38-hr battery
+          </div>
+          <div class="product-meta-item">
+            <i data-lucide="volume-x" style="width:14px;height:14px"></i>
+            Adaptive ANC
+          </div>
+          <div class="product-meta-item">
+            <i data-lucide="bluetooth" style="width:14px;height:14px"></i>
+            Bluetooth 5.3
+          </div>
+          <div class="product-meta-item">
+            <i data-lucide="package" style="width:14px;height:14px"></i>
+            Case included
+          </div>
+        </div>
+
+        <!-- Specs -->
+        <ul class="product-specs" aria-label="Key specifications">
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Driver size:</strong> 40 mm custom dynamic drivers with extended bass response</span>
+          </li>
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Connectivity:</strong> Bluetooth 5.3, multipoint pairing (2 devices simultaneously)</span>
+          </li>
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Battery life:</strong> 38 hours (ANC on) / 50 hours (ANC off), USB-C fast charge</span>
+          </li>
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Noise cancellation:</strong> Hybrid adaptive ANC with 4-mic wind noise reduction</span>
+          </li>
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Weight:</strong> 248 g with memory-foam over-ear cushions</span>
+          </li>
+          <li>
+            <i data-lucide="check-circle" style="width:16px;height:16px"></i>
+            <span><strong>Colors:</strong> Matte Sand (shown), Midnight Slate, Warm Ivory</span>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="product-detail-cta">
+          <a href="#" class="btn btn-primary" id="product-view-deal-btn" aria-label="View deal at retailer">
+            <i data-lucide="external-link" style="width:17px;height:17px"></i>
+            View Deal
+          </a>
+          <button class="btn btn-outline" id="product-wishlist-btn" aria-label="Save for later">
+            <i data-lucide="heart" style="width:17px;height:17px"></i>
+            Save
+          </button>
+        </div>
+
+        <p class="product-detail-cta-note">
+          <i data-lucide="info" style="width:12px;height:12px;color:var(--charcoal-30)"></i>
+          You'll be redirected to the retailer's site. We may earn a commission.
+        </p>
+
+        <div class="product-detail-note">
+          Last verified: July 2025 · Price may vary at time of purchase.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     YOU MIGHT ALSO LIKE
+══════════════════════════════════════════════ -->
+<section class="section-pad related-section" aria-label="Related products">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="eyebrow">Related Picks</p>
+        <h2>You might also like.</h2>
+      </div>
+      <a href="category.html" class="see-all" id="related-see-all">
+        See all Electronics
+        <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+      </a>
+    </div>
+
+    <div class="products-grid" style="grid-template-columns:repeat(4,1fr)" role="list">
+
+      <article class="product-card reveal reveal-delay-1" role="listitem">
+        <div class="product-card-img">
+          <img src="images/prod_speaker.png" alt="Compact fabric wireless speaker" loading="lazy" />
+          <span class="product-card-badge">Trending</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Electronics</span>
+          <h4 class="product-card-name">Compact Fabric Speaker</h4>
+          <div class="product-card-price">$129</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="related1-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-2" role="listitem">
+        <div class="product-card-img">
+          <img src="images/prod_laptop.png" alt="Slim silver ultrabook laptop" loading="lazy" />
+          <span class="product-card-badge">New</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Electronics</span>
+          <h4 class="product-card-name">Slim Ultrabook 14"</h4>
+          <div class="product-card-price">$1,099</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="related2-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-3" role="listitem">
+        <div class="product-card-img">
+          <img src="images/prod_headphones.png" alt="In-ear wireless earbuds" loading="lazy" />
+          <span class="product-card-badge accent">Best Seller</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Electronics</span>
+          <h4 class="product-card-name">True Wireless Earbuds Pro</h4>
+          <div class="product-card-price">$149</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="related3-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal reveal-delay-4" role="listitem">
+        <div class="product-card-img">
+          <img src="images/cat_electronics.png" alt="Desktop electronics essentials bundle" loading="lazy" />
+          <span class="product-card-badge accent">Editor's Pick</span>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-cat">Electronics</span>
+          <h4 class="product-card-name">Desk Essentials Bundle</h4>
+          <div class="product-card-price">$219</div>
+          <div class="product-card-footer">
+            <a href="product.html" class="btn btn-primary btn-sm" id="related4-deal">View Deal</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     NEWSLETTER
+══════════════════════════════════════════════ -->
+<section class="newsletter-band" aria-label="Newsletter signup">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Stay Informed</p>
+      <h2>New picks, every Thursday.</h2>
+      <p>The week's best finds — curated and delivered to your inbox. No noise, just signal.</p>
+      <form class="newsletter-form js-newsletter" id="product-newsletter" novalidate>
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit" class="btn btn-primary" id="product-newsletter-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <i data-lucide="aperture" style="width:20px;height:20px;color:var(--accent)"></i>
+          Aesthetic<span>Bee</span>
+        </a>
+        <p>A curated affiliate site for the design-conscious. We pick fewer things so you don't have to search through more.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Pinterest" id="foot3-pinterest"><i data-lucide="star" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="Instagram" id="foot3-instagram"><i data-lucide="instagram" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="Twitter" id="foot3-twitter"><i data-lucide="twitter" style="width:16px;height:16px"></i></a>
+          <a href="#" aria-label="YouTube" id="foot3-youtube"><i data-lucide="youtube" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="category.html" id="foot3-home-decor">Home Decor</a></li>
+          <li><a href="category.html" id="foot3-fashion">Fashion</a></li>
+          <li><a href="category.html" id="foot3-electronics">Electronics</a></li>
+          <li><a href="category.html" id="foot3-all">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="#" id="foot3-about">Our Story</a></li>
+          <li><a href="#" id="foot3-editorial">Editorial Process</a></li>
+          <li><a href="#" class="js-contact-open" id="foot3-contact">Contact</a></li>
+          <li><a href="#" id="foot3-disclosure">Affiliate Disclosure</a></li>
+          <li><a href="admin.html" id="foot3-admin" style="opacity:0.6;font-size:0.75rem">🔒 Admin Control</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Weekly Newsletter</h5>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:0.9rem;line-height:1.65">Fresh picks every Thursday.</p>
+        <form class="footer-newsletter-form js-newsletter" id="footer3-newsletter" novalidate>
+          <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+          <button type="submit" class="btn btn-primary btn-sm" id="footer3-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2025 Aesthetic Bee. All rights reserved.</p>
+      <p class="affiliate-disclosure">
+        <i data-lucide="info" style="width:12px;height:12px;display:inline;vertical-align:middle;margin-right:4px"></i>
+        This site contains affiliate links — we may earn a commission at no extra cost to you.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Contact Modal ──────────────────────────────── -->
+<div id="contactModal" class="contact-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+  <div class="contact-modal-card">
+    <button class="contact-modal-close" id="contactModalClose" aria-label="Close contact form">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="contact-modal-header">
+      <h2 id="contactModalTitle">Get in Touch</h2>
+      <p>We'd love to hear from you. Send us a message and we'll get back to you shortly.</p>
+    </div>
+    <form class="contact-modal-form" id="contactForm" action="https://formspree.io/f/xpqgbdyy" method="POST" novalidate>
+      <div class="contact-field">
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" name="name" placeholder="Your Name" required autocomplete="name" />
+      </div>
+      <div class="contact-field">
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="_replyto" placeholder="Your Email" required autocomplete="email" />
+      </div>
+      <div class="contact-field">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
